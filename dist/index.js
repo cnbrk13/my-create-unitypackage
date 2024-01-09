@@ -20,6 +20,7 @@ if (workingFolder != null) {
         await access(workingFolder, constants.F_OK);
         chdir(workingFolder);
     } catch (error) {
+        info(`Error with directory: ${workingFolder}`); // Log the value of workingFolder
         throw new Error(`The directory ${workingFolder} does not exist or cannot be accessed.`);
     }
 }
